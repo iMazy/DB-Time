@@ -21,7 +21,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
-  - ZLSwipeableView (0.0.8)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Hero
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
-  - ZLSwipeableView
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -45,7 +45,7 @@ SPEC REPOS:
     - RxCocoa
     - RxDataSources
     - RxSwift
-    - ZLSwipeableView
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -58,8 +58,8 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: e49536837d9901277638493ea537394d4b55f570
-  ZLSwipeableView: df385760ff4838935cdbcb62878ac5acd7355949
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: cda0767a380f3a4278163df0c4bd685c207d8890
+PODFILE CHECKSUM: 0470f3d7a1df68483fb6b5854bd826722cb8d642
 
 COCOAPODS: 1.5.0

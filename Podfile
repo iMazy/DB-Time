@@ -9,9 +9,9 @@ pod 'RxDataSources'
 pod 'ObjectMapper'
 pod 'RxAlamofire'
 pod 'Moya'
-pod 'ZLSwipeableView'
 pod 'Hero'
-
+pod 'SnapKit'
+    
   target 'DB-TimeTests' do
     inherit! :search_paths
     # Pods for testing

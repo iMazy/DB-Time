@@ -25,6 +25,13 @@
 		6453E389209AEF4E00220CFE /* FWSideMenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E386209AEF4E00220CFE /* FWSideMenuContainerViewController.swift */; };
 		6453E38A209AEF4E00220CFE /* FWSideMenuShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E387209AEF4E00220CFE /* FWSideMenuShadow.swift */; };
 		6453E38B209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E388209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift */; };
+		6453E393209AF73A00220CFE /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E38E209AF73A00220CFE /* ViewManager.swift */; };
+		6453E394209AF73A00220CFE /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E38F209AF73A00220CFE /* ZLSwipeableView.swift */; };
+		6453E395209AF73A00220CFE /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E390209AF73A00220CFE /* Scheduler.swift */; };
+		6453E396209AF73A00220CFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6453E391209AF73A00220CFE /* Info.plist */; };
+		6453E397209AF73A00220CFE /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E392209AF73A00220CFE /* Direction.swift */; };
+		6453E39A209AF90900220CFE /* DBCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E399209AF90900220CFE /* DBCardView.swift */; };
+		6453E39C209AFB7A00220CFE /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E39B209AFB7A00220CFE /* Randoms.swift */; };
 		9D3A02BB9C6E0C35DA7D6B0B /* Pods_DB_TimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B6490C80FF85A92880B0A /* Pods_DB_TimeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +79,14 @@
 		6453E386209AEF4E00220CFE /* FWSideMenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWSideMenuContainerViewController.swift; sourceTree = "<group>"; };
 		6453E387209AEF4E00220CFE /* FWSideMenuShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWSideMenuShadow.swift; sourceTree = "<group>"; };
 		6453E388209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FWSideMenuExtension.swift"; sourceTree = "<group>"; };
+		6453E38D209AF73A00220CFE /* SwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableView.h; sourceTree = "<group>"; };
+		6453E38E209AF73A00220CFE /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		6453E38F209AF73A00220CFE /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
+		6453E390209AF73A00220CFE /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		6453E391209AF73A00220CFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6453E392209AF73A00220CFE /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		6453E399209AF90900220CFE /* DBCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCardView.swift; sourceTree = "<group>"; };
+		6453E39B209AFB7A00220CFE /* Randoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randoms.swift; sourceTree = "<group>"; };
 		79D78DCECE688F0AB08CA19C /* Pods-DB-TimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-TimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB-TimeTests/Pods-DB-TimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83870E5941948CF605C994E3 /* Pods-DB-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB-Time/Pods-DB-Time.debug.xcconfig"; sourceTree = "<group>"; };
 		9EB9881C392FF774B36D5E1A /* Pods-DB-TimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-TimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DB-TimeUITests/Pods-DB-TimeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +221,7 @@
 		6453E371209AEC7F00220CFE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6453E398209AF8F400220CFE /* View */,
 				6453E37D209AEDA000220CFE /* DBHomeViewController.swift */,
 			);
 			path = Home;
@@ -215,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				6453E382209AEE3E00220CFE /* UIView+IBLayer.swift */,
+				6453E39B209AFB7A00220CFE /* Randoms.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -247,6 +264,7 @@
 		6453E384209AEF2600220CFE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				6453E38C209AF73A00220CFE /* SwipeableView */,
 				6453E385209AEF4E00220CFE /* FWSideMenu */,
 			);
 			path = Vendor;
@@ -260,6 +278,27 @@
 				6453E388209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift */,
 			);
 			path = FWSideMenu;
+			sourceTree = "<group>";
+		};
+		6453E38C209AF73A00220CFE /* SwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				6453E38D209AF73A00220CFE /* SwipeableView.h */,
+				6453E38E209AF73A00220CFE /* ViewManager.swift */,
+				6453E38F209AF73A00220CFE /* ZLSwipeableView.swift */,
+				6453E390209AF73A00220CFE /* Scheduler.swift */,
+				6453E391209AF73A00220CFE /* Info.plist */,
+				6453E392209AF73A00220CFE /* Direction.swift */,
+			);
+			path = SwipeableView;
+			sourceTree = "<group>";
+		};
+		6453E398209AF8F400220CFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6453E399209AF90900220CFE /* DBCardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		67187C7F7CAC3ECAD435DF50 /* Frameworks */ = {
@@ -380,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6453E396209AF73A00220CFE /* Info.plist in Resources */,
 				6453E34B209AE6CF00220CFE /* LaunchScreen.storyboard in Resources */,
 				6453E348209AE6CF00220CFE /* Assets.xcassets in Resources */,
 				6453E346209AE6CE00220CFE /* Main.storyboard in Resources */,
@@ -474,7 +514,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ZLSwipeableView/ZLSwipeableView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -488,7 +528,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLSwipeableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -503,13 +543,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6453E37C209AED8B00220CFE /* DBRightSideViewController.swift in Sources */,
+				6453E395209AF73A00220CFE /* Scheduler.swift in Sources */,
 				6453E38B209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift in Sources */,
+				6453E394209AF73A00220CFE /* ZLSwipeableView.swift in Sources */,
 				6453E389209AEF4E00220CFE /* FWSideMenuContainerViewController.swift in Sources */,
 				6453E381209AEE0A00220CFE /* DBNetworkService.swift in Sources */,
+				6453E39A209AF90900220CFE /* DBCardView.swift in Sources */,
 				6453E38A209AEF4E00220CFE /* FWSideMenuShadow.swift in Sources */,
 				6453E37A209AED8000220CFE /* DBLeftSideViewController.swift in Sources */,
+				6453E397209AF73A00220CFE /* Direction.swift in Sources */,
+				6453E393209AF73A00220CFE /* ViewManager.swift in Sources */,
 				6453E378209AED5300220CFE /* DBNavigationController.swift in Sources */,
 				6453E341209AE6CE00220CFE /* AppDelegate.swift in Sources */,
+				6453E39C209AFB7A00220CFE /* Randoms.swift in Sources */,
 				6453E37E209AEDA000220CFE /* DBHomeViewController.swift in Sources */,
 				6453E376209AED3900220CFE /* DBBaseViewController.swift in Sources */,
 				6453E383209AEE3E00220CFE /* UIView+IBLayer.swift in Sources */,
