@@ -10,7 +10,6 @@
 		22172115658F1F39B63D5349 /* Pods_DB_Time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA7F7069B74BB283FB613EA /* Pods_DB_Time.framework */; };
 		56653BAE8B32C5B3C3C63506 /* Pods_DB_TimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCBDFB8CFBA195CB97EF546 /* Pods_DB_TimeTests.framework */; };
 		6453E341209AE6CE00220CFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E340209AE6CE00220CFE /* AppDelegate.swift */; };
-		6453E343209AE6CE00220CFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E342209AE6CE00220CFE /* ViewController.swift */; };
 		6453E346209AE6CE00220CFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6453E344209AE6CE00220CFE /* Main.storyboard */; };
 		6453E348209AE6CF00220CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6453E347209AE6CF00220CFE /* Assets.xcassets */; };
 		6453E34B209AE6CF00220CFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6453E349209AE6CF00220CFE /* LaunchScreen.storyboard */; };
@@ -23,6 +22,9 @@
 		6453E37E209AEDA000220CFE /* DBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E37D209AEDA000220CFE /* DBHomeViewController.swift */; };
 		6453E381209AEE0A00220CFE /* DBNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E380209AEE0A00220CFE /* DBNetworkService.swift */; };
 		6453E383209AEE3E00220CFE /* UIView+IBLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E382209AEE3E00220CFE /* UIView+IBLayer.swift */; };
+		6453E389209AEF4E00220CFE /* FWSideMenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E386209AEF4E00220CFE /* FWSideMenuContainerViewController.swift */; };
+		6453E38A209AEF4E00220CFE /* FWSideMenuShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E387209AEF4E00220CFE /* FWSideMenuShadow.swift */; };
+		6453E38B209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E388209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift */; };
 		9D3A02BB9C6E0C35DA7D6B0B /* Pods_DB_TimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B6490C80FF85A92880B0A /* Pods_DB_TimeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +52,6 @@
 		567E2C418E572BB66F5D2C21 /* Pods-DB-Time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-Time.release.xcconfig"; path = "Pods/Target Support Files/Pods-DB-Time/Pods-DB-Time.release.xcconfig"; sourceTree = "<group>"; };
 		6453E33D209AE6CE00220CFE /* DB-Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DB-Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6453E340209AE6CE00220CFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6453E342209AE6CE00220CFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6453E345209AE6CE00220CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6453E347209AE6CF00220CFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6453E34A209AE6CF00220CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +69,9 @@
 		6453E37D209AEDA000220CFE /* DBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHomeViewController.swift; sourceTree = "<group>"; };
 		6453E380209AEE0A00220CFE /* DBNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNetworkService.swift; sourceTree = "<group>"; };
 		6453E382209AEE3E00220CFE /* UIView+IBLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBLayer.swift"; sourceTree = "<group>"; };
+		6453E386209AEF4E00220CFE /* FWSideMenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWSideMenuContainerViewController.swift; sourceTree = "<group>"; };
+		6453E387209AEF4E00220CFE /* FWSideMenuShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWSideMenuShadow.swift; sourceTree = "<group>"; };
+		6453E388209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FWSideMenuExtension.swift"; sourceTree = "<group>"; };
 		79D78DCECE688F0AB08CA19C /* Pods-DB-TimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-TimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB-TimeTests/Pods-DB-TimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83870E5941948CF605C994E3 /* Pods-DB-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB-Time/Pods-DB-Time.debug.xcconfig"; sourceTree = "<group>"; };
 		9EB9881C392FF774B36D5E1A /* Pods-DB-TimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-TimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DB-TimeUITests/Pods-DB-TimeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 		6453E33F209AE6CE00220CFE /* DB-Time */ = {
 			isa = PBXGroup;
 			children = (
+				6453E384209AEF2600220CFE /* Vendor */,
 				6453E373209AECAD00220CFE /* Share */,
 				6453E372209AEC9900220CFE /* Extension */,
 				6453E36F209AEC3A00220CFE /* AppDelegate */,
@@ -192,7 +197,6 @@
 		6453E370209AEC7200220CFE /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				6453E342209AE6CE00220CFE /* ViewController.swift */,
 				6453E375209AED3900220CFE /* DBBaseViewController.swift */,
 				6453E377209AED5300220CFE /* DBNavigationController.swift */,
 			);
@@ -238,6 +242,24 @@
 				6453E380209AEE0A00220CFE /* DBNetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		6453E384209AEF2600220CFE /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				6453E385209AEF4E00220CFE /* FWSideMenu */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		6453E385209AEF4E00220CFE /* FWSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6453E386209AEF4E00220CFE /* FWSideMenuContainerViewController.swift */,
+				6453E387209AEF4E00220CFE /* FWSideMenuShadow.swift */,
+				6453E388209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift */,
+			);
+			path = FWSideMenu;
 			sourceTree = "<group>";
 		};
 		67187C7F7CAC3ECAD435DF50 /* Frameworks */ = {
@@ -481,8 +503,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6453E37C209AED8B00220CFE /* DBRightSideViewController.swift in Sources */,
-				6453E343209AE6CE00220CFE /* ViewController.swift in Sources */,
+				6453E38B209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift in Sources */,
+				6453E389209AEF4E00220CFE /* FWSideMenuContainerViewController.swift in Sources */,
 				6453E381209AEE0A00220CFE /* DBNetworkService.swift in Sources */,
+				6453E38A209AEF4E00220CFE /* FWSideMenuShadow.swift in Sources */,
 				6453E37A209AED8000220CFE /* DBLeftSideViewController.swift in Sources */,
 				6453E378209AED5300220CFE /* DBNavigationController.swift in Sources */,
 				6453E341209AE6CE00220CFE /* AppDelegate.swift in Sources */,
@@ -664,6 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "DB-Time/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -682,6 +707,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "DB-Time/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
