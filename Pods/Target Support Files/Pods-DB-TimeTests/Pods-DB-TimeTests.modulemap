@@ -1,0 +1,6 @@
+framework module Pods_DB_TimeTests {
+  umbrella header "Pods-DB-TimeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
