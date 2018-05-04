@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UINavigationBar.appearance()
         appearance.isTranslucent = false
         appearance.tintColor = UIColor.white
-        appearance.barTintColor = .cyan
+        appearance.barTintColor = UIColor(r: 0, g: 172, b: 98)
 //        appearance.shadowImage = UIImage()
 //        appearance.setBackgroundImage(UIImage(), for: .default)
         

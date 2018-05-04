@@ -8,9 +8,6 @@
 
 import UIKit
 
-let w = UIScreen.main.bounds.width
-let h = UIScreen.main.bounds.height
-
 class DBCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     var attributes: [UICollectionViewLayoutAttributes]? = [UICollectionViewLayoutAttributes]()
@@ -18,7 +15,7 @@ class DBCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override func awakeFromNib() {
         super.awakeFromNib()
         sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        itemSize = CGSize(width: (w - 40) / 3, height: (w - 40)/3 + 30)
+        itemSize = CGSize(width: (SCREEN_WIDTH - 40) / 3, height: (SCREEN_WIDTH - 40)/3 + 30)
         minimumLineSpacing = 10
         minimumInteritemSpacing = 10
     }
@@ -43,7 +40,7 @@ class DBCollectionViewFlowLayout: UICollectionViewFlowLayout {
         }
         
         if indexPath.row%3 == 1 {
-            attris.center.y += (w - 40)/6 + 15
+            attris.center.y += (SCREEN_WIDTH - 40)/6 + 15
         }
         return attris
     }

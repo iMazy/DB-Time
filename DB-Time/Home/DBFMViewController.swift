@@ -19,16 +19,19 @@ class DBFMViewController: DBBaseViewController {
         view.backgroundColor = UIColor.random()
         navigationItem.title = "FM"
         
-        flowLayout.itemSize = CGSize(width: (w - 40) / 3, height: (w - 40) / 3)
+        flowLayout.itemSize = CGSize(width: (SCREEN_WIDTH - 40) / 3, height: (SCREEN_WIDTH - 40) / 3)
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
         
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .white
         collectionView.registerNib(DBFMCollectionViewCell.self)
         collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        collectionView.contentInset = UIEdgeInsetsMake(10, 10, 100, 10)
         view.addSubview(collectionView)
+        collectionView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
         
         
         let leftBarItemButton = UIButton(type: .system)

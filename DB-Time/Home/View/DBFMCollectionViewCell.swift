@@ -14,7 +14,7 @@ class DBFMCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        iconImageView.layer.cornerRadius = (w - 40)/6
+        iconImageView.layer.cornerRadius = (SCREEN_WIDTH - 40)/6
     }
 
 }
