@@ -25,6 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menuContainer = FWSideMenuContainerViewController.container(centerViewController: homeVC, leftMenuViewController: leftVC, rightMenuViewController: rightVC)
         window?.rootViewController = menuContainer
         window?.makeKeyAndVisible()
+        
+        let appearance = UINavigationBar.appearance()
+        appearance.isTranslucent = false
+        appearance.tintColor = UIColor.white
+        appearance.barTintColor = .cyan
+//        appearance.shadowImage = UIImage()
+//        appearance.setBackgroundImage(UIImage(), for: .default)
+        
         return true
     }
 

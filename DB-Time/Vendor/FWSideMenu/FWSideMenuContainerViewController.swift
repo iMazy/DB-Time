@@ -568,9 +568,9 @@ extension FWSideMenuContainerViewController {
     }
     
     private func closeSideMenu(completeBolck: (FWSideMenuVoidBlock?) = nil) {
-        self.setCenterViewControllerOffset(offset: 375, animated: true) {        
-            self.setCenterViewControllerOffset(offset: 0, animated: true, completeBlock: completeBolck)
-        }
+        self.setCenterViewControllerOffset(offset: 0, animated: true, completeBlock: completeBolck)
+//        self.setCenterViewControllerOffset(offset: 375, animated: true) {        
+//        }
     }
     
     private func setUserInteractionStateForCenterViewController() {

@@ -227,7 +227,7 @@ open class ZLSwipeableView: UIView {
             let shouldBeHidden = i >= Int(numberOfActiveView)
             view.isHidden = shouldBeHidden
             guard !shouldBeHidden else { continue }
-//            animateView(view, i, activeViews, self)
+            animateView(view, i, activeViews, self)
         }
     }
 

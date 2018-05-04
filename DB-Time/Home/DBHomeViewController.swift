@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class DBHomeViewController: UIViewController {
+class DBHomeViewController: DBBaseViewController {
     
     var swipeableView: ZLSwipeableView!
     
@@ -20,10 +20,18 @@ class DBHomeViewController: UIViewController {
 
         navigationItem.title = "电影"
         
+        let leftBarItemButton = UIButton(type: .system)
+        leftBarItemButton.frame.size = CGSize(width: 50, height: 30)
+        leftBarItemButton.setImage(#imageLiteral(resourceName: "Category"), for: .normal)
+        leftBarItemButton.imageView?.contentMode = .scaleAspectFit
+        leftBarItemButton.addTarget(self, action: #selector(leftBarButtonItemDidTap), for: .touchUpInside)
+        leftBarItemButton.sizeToFit()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarItemButton)
+        
         swipeableView = ZLSwipeableView()
         view.addSubview(swipeableView)
         swipeableView.snp.makeConstraints({
-            $0.top.equalToSuperview().offset(80)
+            $0.top.equalToSuperview().offset(20)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
             $0.bottom.equalToSuperview().offset(-50)
@@ -62,6 +70,14 @@ class DBHomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         swipeableView.nextView = {
             return self.nextCardView()
+        }
+    }
+    
+    @objc func leftBarButtonItemDidTap() {
+        if self.menuContainerViewController.sideMenuState == .leftMenuOpen {
+            self.menuContainerViewController.setSideMenuState(state: .closed)
+        } else {
+            self.menuContainerViewController.setSideMenuState(state: .leftMenuOpen)
         }
     }
     
