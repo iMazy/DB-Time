@@ -8,14 +8,22 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
+import Moya
+import ObjectMapper
 
 class DBHomeViewController: DBBaseViewController {
-    
-    var swipeableView: ZLSwipeableView!
+    /// ARC & Rx 垃圾回收
+    private let disposeBag = DisposeBag()
+    private var swipeableView: ZLSwipeableView!
+    // 当前card在数组中的索引
+    private var currentCardIndex: Int = 0
+    private var dataSource: [DBMovieSubject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .white
 
         navigationItem.title = "电影"
@@ -34,42 +42,71 @@ class DBHomeViewController: DBBaseViewController {
             $0.top.equalToSuperview().offset(20)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
-            $0.bottom.equalToSuperview().offset(-50)
+            $0.bottom.equalToSuperview().offset(-100)
         })
         
         swipeableView.allowedDirection = [.horizontal, .up]
         swipeableView.numberOfActiveView = 3
         swipeableView.onlySwipeTopCard = true
         
+        DBNetworkProvider.rx.request(.top250).mapObject(DBTop250.self)
+            .subscribe(onSuccess: { data in
+                // 数据处理
+                print(data.subjects)
+                self.dataSource = data.subjects
+                self.loadNextView()
+            }, onError: { error in
+                print("数据请求失败! 错误原因: ", error)
+            }).disposed(by: disposeBag)
+        
 //        setupSwipeableViewDelegate()
         
-        swipeableView.didStart = {view, location in
-            print("Did start swiping view at location: \(location)")
-        }
-        swipeableView.swiping = {view, location, translation in
-            print("Swiping at view location: \(location) translation: \(translation)")
-        }
-        swipeableView.didEnd = {view, location in
-            print("Did end swiping view at location: \(location)")
-        }
-        swipeableView.didSwipe = {view, direction, vector in
-            print("Did swipe view in direction: \(direction), vector: \(vector)")
-        }
-        swipeableView.didCancel = {view in
-            print("Did cancel swiping view")
-        }
-        swipeableView.didTap = {view, location in
-            print("Did tap at location \(location)")
-        }
-        swipeableView.didDisappear = { view in
-            print("Did disappear swiping view")
-        }
+//        swipeableView.didStart = {view, location in
+//            print("Did start swiping view at location: \(location)")
+//        }
+//        swipeableView.swiping = {view, location, translation in
+//            print("Swiping at view location: \(location) translation: \(translation)")
+//        }
+//        swipeableView.didEnd = {view, location in
+//            print("Did end swiping view at location: \(location)")
+//        }
+//        swipeableView.didSwipe = {view, direction, vector in
+//            print("Did swipe view in direction: \(direction), vector: \(vector)")
+//        }
+//        swipeableView.didCancel = {view in
+//            print("Did cancel swiping view")
+//        }
+//        swipeableView.didTap = {view, location in
+//            print("Did tap at location \(location)")
+//        }
+//        swipeableView.didDisappear = { view in
+//            print("Did disappear swiping view")
+//        }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    func loadNextView() {
+        
         swipeableView.nextView = {
-            return self.nextCardView()
+            
+            if self.currentCardIndex >= self.dataSource.count {
+                return nil
+            }
+            let bounds = self.swipeableView.bounds
+            let container = DBMovieCardContainer(frame: bounds)
+            let card = DBMovieCardView.loadFromNibAndClass(DBMovieCardView.self)!
+            container.addSubview(card)
+            card.snp.makeConstraints() {
+                $0.top.left.equalToSuperview()
+                $0.size.equalTo(container.bounds.size)
+            }
+            container.card = card
+            
+            if self.currentCardIndex < self.dataSource.count {
+                let model = self.dataSource[self.currentCardIndex]
+                card.setupWithUser(movie: model)
+                self.currentCardIndex += 1
+            }
+            return container
         }
     }
     
@@ -79,22 +116,6 @@ class DBHomeViewController: DBBaseViewController {
         } else {
             self.menuContainerViewController.setSideMenuState(state: .leftMenuOpen)
         }
-    }
-    
-    // MARK: ()
-    func nextCardView() -> UIView? {
-  
-        let cardView = DBCardView(frame: swipeableView.bounds)
-        cardView.backgroundColor = UIColor.random()
-        return cardView
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }
 

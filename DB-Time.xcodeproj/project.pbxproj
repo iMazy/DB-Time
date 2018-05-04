@@ -30,7 +30,6 @@
 		6453E395209AF73A00220CFE /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E390209AF73A00220CFE /* Scheduler.swift */; };
 		6453E396209AF73A00220CFE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6453E391209AF73A00220CFE /* Info.plist */; };
 		6453E397209AF73A00220CFE /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E392209AF73A00220CFE /* Direction.swift */; };
-		6453E39A209AF90900220CFE /* DBCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E399209AF90900220CFE /* DBCardView.swift */; };
 		6453E39C209AFB7A00220CFE /* Randoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E39B209AFB7A00220CFE /* Randoms.swift */; };
 		6453E3A6209BF68300220CFE /* DBLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453E3A4209BF68300220CFE /* DBLeftTableViewCell.swift */; };
 		6453E3A7209BF68300220CFE /* DBLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453E3A5209BF68300220CFE /* DBLeftTableViewCell.xib */; };
@@ -46,6 +45,17 @@
 		6453E3BB209C0A8300220CFE /* DBFMCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453E3B9209C0A8300220CFE /* DBFMCollectionViewCell.xib */; };
 		6470CA73209C44C4008A1938 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA72209C44C4008A1938 /* UIColor+Hex.swift */; };
 		6470CA75209C4631008A1938 /* DBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA74209C4631008A1938 /* DBConstants.swift */; };
+		6470CA7D209C4B7C008A1938 /* ObserverType+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA77209C4B7C008A1938 /* ObserverType+ObjectMapper.swift */; };
+		6470CA7E209C4B7C008A1938 /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA78209C4B7C008A1938 /* Observable+Response.swift */; };
+		6470CA7F209C4B7C008A1938 /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA79209C4B7C008A1938 /* MoyaProvider+Rx.swift */; };
+		6470CA80209C4B7C008A1938 /* Single+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA7A209C4B7C008A1938 /* Single+Response.swift */; };
+		6470CA81209C4B7C008A1938 /* Single+MoyaObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA7B209C4B7C008A1938 /* Single+MoyaObjectMapper.swift */; };
+		6470CA82209C4B7C008A1938 /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA7C209C4B7C008A1938 /* Response+ObjectMapper.swift */; };
+		6470CA85209C4CA6008A1938 /* DBRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA84209C4CA6008A1938 /* DBRatingModel.swift */; };
+		6470CA87209C5555008A1938 /* DBMovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA86209C5555008A1938 /* DBMovieCardView.swift */; };
+		6470CA89209C5563008A1938 /* DBMovieCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6470CA88209C5563008A1938 /* DBMovieCardView.xib */; };
+		6470CA8B209C5657008A1938 /* DBMovieCardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA8A209C5657008A1938 /* DBMovieCardContainer.swift */; };
+		6470CA8D209C5D74008A1938 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470CA8C209C5D74008A1938 /* UIImageView+URL.swift */; };
 		9D3A02BB9C6E0C35DA7D6B0B /* Pods_DB_TimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B6490C80FF85A92880B0A /* Pods_DB_TimeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +109,6 @@
 		6453E390209AF73A00220CFE /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		6453E391209AF73A00220CFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6453E392209AF73A00220CFE /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		6453E399209AF90900220CFE /* DBCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCardView.swift; sourceTree = "<group>"; };
 		6453E39B209AFB7A00220CFE /* Randoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randoms.swift; sourceTree = "<group>"; };
 		6453E3A4209BF68300220CFE /* DBLeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLeftTableViewCell.swift; sourceTree = "<group>"; };
 		6453E3A5209BF68300220CFE /* DBLeftTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBLeftTableViewCell.xib; sourceTree = "<group>"; };
@@ -115,6 +124,17 @@
 		6453E3B9209C0A8300220CFE /* DBFMCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBFMCollectionViewCell.xib; sourceTree = "<group>"; };
 		6470CA72209C44C4008A1938 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		6470CA74209C4631008A1938 /* DBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConstants.swift; sourceTree = "<group>"; };
+		6470CA77209C4B7C008A1938 /* ObserverType+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObserverType+ObjectMapper.swift"; sourceTree = "<group>"; };
+		6470CA78209C4B7C008A1938 /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
+		6470CA79209C4B7C008A1938 /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
+		6470CA7A209C4B7C008A1938 /* Single+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Response.swift"; sourceTree = "<group>"; };
+		6470CA7B209C4B7C008A1938 /* Single+MoyaObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+MoyaObjectMapper.swift"; sourceTree = "<group>"; };
+		6470CA7C209C4B7C008A1938 /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
+		6470CA84209C4CA6008A1938 /* DBRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRatingModel.swift; sourceTree = "<group>"; };
+		6470CA86209C5555008A1938 /* DBMovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMovieCardView.swift; sourceTree = "<group>"; };
+		6470CA88209C5563008A1938 /* DBMovieCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBMovieCardView.xib; sourceTree = "<group>"; };
+		6470CA8A209C5657008A1938 /* DBMovieCardContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMovieCardContainer.swift; sourceTree = "<group>"; };
+		6470CA8C209C5D74008A1938 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		79D78DCECE688F0AB08CA19C /* Pods-DB-TimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-TimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB-TimeTests/Pods-DB-TimeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83870E5941948CF605C994E3 /* Pods-DB-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB-Time/Pods-DB-Time.debug.xcconfig"; sourceTree = "<group>"; };
 		9EB9881C392FF774B36D5E1A /* Pods-DB-TimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB-TimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DB-TimeUITests/Pods-DB-TimeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +284,7 @@
 				6453E3A8209BF84000220CFE /* UIView+Nib.swift */,
 				6453E39B209AFB7A00220CFE /* Randoms.swift */,
 				6470CA72209C44C4008A1938 /* UIColor+Hex.swift */,
+				6470CA8C209C5D74008A1938 /* UIImageView+URL.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -271,6 +292,7 @@
 		6453E373209AECAD00220CFE /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				6470CA83209C4C8D008A1938 /* Model */,
 				6453E37F209AEDC800220CFE /* Network */,
 				6470CA74209C4631008A1938 /* DBConstants.swift */,
 			);
@@ -300,6 +322,7 @@
 		6453E384209AEF2600220CFE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				6470CA76209C4B7C008A1938 /* RxMoya */,
 				6453E38C209AF73A00220CFE /* SwipeableView */,
 				6453E385209AEF4E00220CFE /* FWSideMenu */,
 			);
@@ -332,10 +355,12 @@
 		6453E398209AF8F400220CFE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6453E399209AF90900220CFE /* DBCardView.swift */,
+				6470CA86209C5555008A1938 /* DBMovieCardView.swift */,
+				6470CA88209C5563008A1938 /* DBMovieCardView.xib */,
 				6453E3B6209C0A1A00220CFE /* DBCollectionViewFlowLayout.swift */,
 				6453E3B8209C0A8300220CFE /* DBFMCollectionViewCell.swift */,
 				6453E3B9209C0A8300220CFE /* DBFMCollectionViewCell.xib */,
+				6470CA8A209C5657008A1938 /* DBMovieCardContainer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +374,27 @@
 				6453E3AC209BF9EE00220CFE /* DBLeftHeaderView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6470CA76209C4B7C008A1938 /* RxMoya */ = {
+			isa = PBXGroup;
+			children = (
+				6470CA77209C4B7C008A1938 /* ObserverType+ObjectMapper.swift */,
+				6470CA78209C4B7C008A1938 /* Observable+Response.swift */,
+				6470CA79209C4B7C008A1938 /* MoyaProvider+Rx.swift */,
+				6470CA7A209C4B7C008A1938 /* Single+Response.swift */,
+				6470CA7B209C4B7C008A1938 /* Single+MoyaObjectMapper.swift */,
+				6470CA7C209C4B7C008A1938 /* Response+ObjectMapper.swift */,
+			);
+			path = RxMoya;
+			sourceTree = "<group>";
+		};
+		6470CA83209C4C8D008A1938 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6470CA84209C4CA6008A1938 /* DBRatingModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		67187C7F7CAC3ECAD435DF50 /* Frameworks */ = {
@@ -478,6 +524,7 @@
 				6453E3AD209BF9EE00220CFE /* DBLeftHeaderView.xib in Resources */,
 				6453E3B5209C070800220CFE /* DBUserInfoViewController.xib in Resources */,
 				6453E346209AE6CE00220CFE /* Main.storyboard in Resources */,
+				6470CA89209C5563008A1938 /* DBMovieCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +609,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -576,6 +624,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -600,6 +649,7 @@
 				6453E37C209AED8B00220CFE /* DBRightSideViewController.swift in Sources */,
 				6453E395209AF73A00220CFE /* Scheduler.swift in Sources */,
 				6453E3AF209C035900220CFE /* DBFMViewController.swift in Sources */,
+				6470CA7D209C4B7C008A1938 /* ObserverType+ObjectMapper.swift in Sources */,
 				6453E3BA209C0A8300220CFE /* DBFMCollectionViewCell.swift in Sources */,
 				6453E38B209AEF4E00220CFE /* UIViewController+FWSideMenuExtension.swift in Sources */,
 				6453E3B7209C0A1A00220CFE /* DBCollectionViewFlowLayout.swift in Sources */,
@@ -610,19 +660,27 @@
 				6453E3AB209BF9E600220CFE /* DBLeftHeaderView.swift in Sources */,
 				6453E3B1209C063E00220CFE /* DBMusicViewController.swift in Sources */,
 				6453E381209AEE0A00220CFE /* DBNetworkService.swift in Sources */,
-				6453E39A209AF90900220CFE /* DBCardView.swift in Sources */,
+				6470CA8D209C5D74008A1938 /* UIImageView+URL.swift in Sources */,
 				6453E38A209AEF4E00220CFE /* FWSideMenuShadow.swift in Sources */,
+				6470CA85209C4CA6008A1938 /* DBRatingModel.swift in Sources */,
 				6453E37A209AED8000220CFE /* DBLeftSideViewController.swift in Sources */,
+				6470CA82209C4B7C008A1938 /* Response+ObjectMapper.swift in Sources */,
 				6453E397209AF73A00220CFE /* Direction.swift in Sources */,
 				6470CA75209C4631008A1938 /* DBConstants.swift in Sources */,
+				6470CA87209C5555008A1938 /* DBMovieCardView.swift in Sources */,
+				6470CA80209C4B7C008A1938 /* Single+Response.swift in Sources */,
 				6453E393209AF73A00220CFE /* ViewManager.swift in Sources */,
 				6453E378209AED5300220CFE /* DBNavigationController.swift in Sources */,
 				6453E341209AE6CE00220CFE /* AppDelegate.swift in Sources */,
+				6470CA8B209C5657008A1938 /* DBMovieCardContainer.swift in Sources */,
+				6470CA81209C4B7C008A1938 /* Single+MoyaObjectMapper.swift in Sources */,
 				6453E39C209AFB7A00220CFE /* Randoms.swift in Sources */,
 				6453E37E209AEDA000220CFE /* DBHomeViewController.swift in Sources */,
 				6453E3B4209C070800220CFE /* DBUserInfoViewController.swift in Sources */,
 				6453E376209AED3900220CFE /* DBBaseViewController.swift in Sources */,
+				6470CA7E209C4B7C008A1938 /* Observable+Response.swift in Sources */,
 				6453E3A6209BF68300220CFE /* DBLeftTableViewCell.swift in Sources */,
+				6470CA7F209C4B7C008A1938 /* MoyaProvider+Rx.swift in Sources */,
 				6453E383209AEE3E00220CFE /* UIView+IBLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

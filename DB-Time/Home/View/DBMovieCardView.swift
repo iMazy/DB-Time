@@ -1,15 +1,17 @@
 //
-//  DBCardView.swift
+//  DBMovieCardView.swift
 //  DB-Time
 //
-//  Created by Mazy on 2018/5/3.
+//  Created by Mazy on 2018/5/4.
 //  Copyright © 2018 Mazy. All rights reserved.
 //
 
 import UIKit
 
-class DBCardView: UIView {
+class DBMovieCardView: UIView {
 
+    @IBOutlet weak var coverImageView: UIImageView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -18,6 +20,10 @@ class DBCardView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    func setupWithUser(movie: DBMovieSubject) {
+        coverImageView.setImage(with: URL(string: movie.images.medium))
     }
     
     func setup() {

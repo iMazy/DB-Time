@@ -11,6 +11,7 @@ pod 'RxAlamofire'
 pod 'Moya'
 pod 'Hero'
 pod 'SnapKit'
+pod 'Kingfisher'
     
   target 'DB-TimeTests' do
     inherit! :search_paths

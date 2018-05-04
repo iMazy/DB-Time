@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.2)
   - Differentiator (3.0.2)
   - Hero (1.2.0)
+  - Kingfisher (4.7.0)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - Hero
+  - Kingfisher
   - Moya
   - ObjectMapper
   - RxAlamofire
@@ -38,6 +40,7 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - Hero
+    - Kingfisher
     - Moya
     - ObjectMapper
     - Result
@@ -51,6 +54,7 @@ SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
@@ -60,6 +64,6 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 0470f3d7a1df68483fb6b5854bd826722cb8d642
+PODFILE CHECKSUM: 8c6c51facc9c82e81754b4618e058b89b0bb9209
 
 COCOAPODS: 1.5.0
