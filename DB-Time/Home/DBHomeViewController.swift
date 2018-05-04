@@ -72,7 +72,14 @@ class DBHomeViewController: UIViewController {
         cardView.backgroundColor = UIColor.random()
         return cardView
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 
