@@ -20,6 +20,7 @@ class DBHomeViewController: DBBaseViewController {
     // 当前card在数组中的索引
     private var currentCardIndex: Int = 0
     private var dataSource: [DBMovieSubject] = []
+    private var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,10 @@ class DBHomeViewController: DBBaseViewController {
         swipeableView.numberOfActiveView = 3
         swipeableView.onlySwipeTopCard = true
         
+        tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(UITableViewCell.self)
+        tableView.dataSource = self
+        
         DBNetworkProvider.rx.request(.top250).mapObject(DBTop250.self)
             .subscribe(onSuccess: { data in
                 // 数据处理
@@ -61,27 +66,30 @@ class DBHomeViewController: DBBaseViewController {
         
 //        setupSwipeableViewDelegate()
         
-//        swipeableView.didStart = {view, location in
-//            print("Did start swiping view at location: \(location)")
-//        }
-//        swipeableView.swiping = {view, location, translation in
-//            print("Swiping at view location: \(location) translation: \(translation)")
-//        }
-//        swipeableView.didEnd = {view, location in
-//            print("Did end swiping view at location: \(location)")
-//        }
-//        swipeableView.didSwipe = {view, direction, vector in
-//            print("Did swipe view in direction: \(direction), vector: \(vector)")
-//        }
-//        swipeableView.didCancel = {view in
-//            print("Did cancel swiping view")
-//        }
-//        swipeableView.didTap = {view, location in
-//            print("Did tap at location \(location)")
-//        }
-//        swipeableView.didDisappear = { view in
-//            print("Did disappear swiping view")
-//        }
+        swipeableView.didTap = {view, location in
+            guard let containerView = view as? DBMovieCardContainer, let cardView = containerView.card else { return }
+            
+            UIView.animate(withDuration: 0.5, delay: 0, options: .transitionFlipFromLeft, animations: {
+                cardView.layer.transform = CATransform3DMakeRotation(-CGFloat(Double.pi/2), 0, 1, 0)
+            }, completion: { (_) in
+                if cardView.subviews.contains(self.tableView) {
+                    self.tableView.removeFromSuperview()
+                } else {
+                    self.tableView.frame = cardView.bounds
+                    if let movie = cardView.cardMovie {
+                        let headerView = UIImageView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH))
+                        headerView.contentMode = .scaleAspectFill
+                        headerView.clipsToBounds = true
+                        headerView.setImage(with: URL(string: movie.images.medium))
+                        self.tableView.tableHeaderView = headerView
+                    }
+                    cardView.addSubview(self.tableView)
+                }
+                UIView.animate(withDuration: 0.5, delay: 0, options: .transitionFlipFromLeft, animations: {
+                    cardView.layer.transform = CATransform3DMakeRotation(0, 0, 1, 0)
+                })
+            })
+        }
     }
     
     func loadNextView() {
@@ -119,6 +127,18 @@ class DBHomeViewController: DBBaseViewController {
     }
 }
 
+extension DBHomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(with: UITableViewCell.self, for: indexPath)
+        cell.textLabel?.text = "---\(indexPath.row)---"
+        return cell
+    }
+}
 
 // MARK: - SwipeableViewDelegate
 /*

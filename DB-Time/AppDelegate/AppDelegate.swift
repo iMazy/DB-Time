@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.isTranslucent = false
         appearance.tintColor = UIColor.white
         appearance.barTintColor = UIColor(r: 0, g: 172, b: 98)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 18)]
 //        appearance.shadowImage = UIImage()
 //        appearance.setBackgroundImage(UIImage(), for: .default)
         
