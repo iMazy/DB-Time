@@ -11,6 +11,13 @@ import UIKit
 class DBMovieCardView: UIView {
 
     @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var directorsLabel: UILabel!
+    @IBOutlet weak var actorsLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var reatingLabel: UILabel!
+    
+    
     var cardMovie: DBMovieSubject?
     
     override init(frame: CGRect) {
@@ -26,6 +33,11 @@ class DBMovieCardView: UIView {
     func setupWithUser(movie: DBMovieSubject) {
         cardMovie = movie
         coverImageView.setImage(with: URL(string: movie.images.medium))
+        nameLabel.text = movie.title + " / " + movie.originalTitle
+        directorsLabel.text = "导演: " + movie.directors.map({ $0.name + " " }).reduce("", +)
+        actorsLabel.text = "主演: " + movie.casts.map({ $0.name + " " }).reduce("", +)
+        genresLabel.text = movie.genres.map({ $0 + " " }).reduce("", +)
+        reatingLabel.text = "\(movie.rating.average)" + " \(movie.collectCount)人评价"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
