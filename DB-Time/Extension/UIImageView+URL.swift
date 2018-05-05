@@ -16,6 +16,7 @@ extension UIImageView {
                   options: KingfisherOptionsInfo = [.transition(.fade(0.2))],
                   progressBlock: DownloadProgressBlock? = nil,
                   completionHandler: CompletionHandler? = nil) {
+        kf.indicatorType = .activity
         kf.setImage(with: url,
                     placeholder: placeholder,
                     options: options,

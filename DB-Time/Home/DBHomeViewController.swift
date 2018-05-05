@@ -77,10 +77,10 @@ class DBHomeViewController: DBBaseViewController {
                 } else {
                     self.tableView.frame = cardView.bounds
                     if let movie = cardView.cardMovie {
-                        let headerView = UIImageView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH))
-                        headerView.contentMode = .scaleAspectFill
-                        headerView.clipsToBounds = true
-                        headerView.setImage(with: URL(string: movie.images.medium))
+                        let headerView = UIView.loadFromNibAndClass(DBMovieHeaderView.self)
+                        headerView?.frame = CGRect(x: 0, y: 0, width: cardView.bounds.width, height: cardView.bounds.width / 2)
+                        headerView?.layoutIfNeeded()
+                        headerView?.castModels = Observable.just(movie.casts)
                         self.tableView.tableHeaderView = headerView
                     }
                     cardView.addSubview(self.tableView)

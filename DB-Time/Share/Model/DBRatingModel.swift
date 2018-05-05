@@ -69,7 +69,7 @@ struct DBCastModel: Mappable {
     var alt: String = ""
     var name: String = ""
     var id: Int64 = 0
-    var avatars: [DBAvatar] = []
+    var avatars: DBAvatar!
     
     init?(map: Map) {
     }
