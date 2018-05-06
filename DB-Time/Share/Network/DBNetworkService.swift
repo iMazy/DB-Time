@@ -12,15 +12,16 @@ import Moya
 //初始化豆瓣FM请求的provider
 let DBNetworkProvider = MoyaProvider<DBNetworkAPI>()
 
-/** 下面定义豆瓣FM请求的endpoints（供provider使用）**/
+/** 下面定义豆瓣请求的（供provider使用）**/
 //请求分类
 public enum DBNetworkAPI {
-    case inTheaters //
-    case comingSoon
-    case top250  // top250
-    case weekly  //
-    case usBox
-    case newMovies // 电影
+    case inTheaters // 热映
+    case comingSoon // 即将上映
+    case top250     // top250
+    case usBox      // 北美票房榜
+    case newMovies  // 新片榜
+    
+    case movieDetail(String) // 影片详情
 }
 
 //请求配置
@@ -39,12 +40,12 @@ extension DBNetworkAPI: TargetType {
             return "/v2/movie/coming_soon"
         case .top250:
             return "/v2/movie/top250"
-        case .weekly:
-            return "/v2/movie/weekly"
         case .usBox:
             return "/v2/movie/us_box"
         case .newMovies:
             return "/v2/movie/new_movies"
+        case .movieDetail(let id):
+            return "/v2/movie/subject/" + id
         }
     }
     

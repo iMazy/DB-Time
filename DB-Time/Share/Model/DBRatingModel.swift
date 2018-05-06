@@ -9,13 +9,12 @@
 import UIKit
 import ObjectMapper
 
-struct DBTop250: Mappable {
+struct DBMovie: Mappable {
     
     var count: Int = 0
     var start: Int = 0
     var total: Int = 0
     var subjects: [DBMovieSubject] = []
-    
     
     init?(map: Map) {
     }
@@ -27,7 +26,6 @@ struct DBTop250: Mappable {
         total <- map["total"]
         subjects <- map["subjects"]
     }
-    
 }
 
 struct DBMovieSubject: Mappable {
@@ -42,7 +40,7 @@ struct DBMovieSubject: Mappable {
     var year: String = ""
     var images: DBAvatar!
     var alt: String = ""
-    var id: Int64 = 0
+    var id: String = ""
     
     init?(map: Map) {
     }
@@ -113,5 +111,42 @@ struct DBRatingModel: Mappable {
         min <- map["min"]
         average <- map["average"]
         stars <- map["stars"]
+    }
+}
+
+
+
+struct DBUSBox: Mappable {
+    
+    var date: String = ""
+    var title: String = ""
+    var subjects: [DBUSBoxSubject] = []
+    
+    init?(map: Map) {
+    }
+    
+    // Mappable
+    mutating func mapping(map: Map) {
+        date <- map["date"]
+        title <- map["title"]
+        subjects <- map["subjects"]
+    }
+}
+
+struct DBUSBoxSubject: Mappable {
+    var box: Int = 0
+    var new: Bool = false
+    var rank: Int = 0
+    var subject: DBMovieSubject!
+    
+    init?(map: Map) {
+    }
+    
+    // Mappable
+    mutating func mapping(map: Map) {
+        box <- map["box"]
+        new <- map["new"]
+        rank <- map["rank"]
+        subject <- map["subject"]
     }
 }

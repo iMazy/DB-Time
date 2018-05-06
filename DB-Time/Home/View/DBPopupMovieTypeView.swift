@@ -12,13 +12,24 @@ import RxSwift
 
 class DBPopupMovieTypeView: UIView, TableViewAnimationProtocol {
 
-    let disposeBag = DisposeBag()
-    var tableView: UITableView!
-    var isShowing: Bool = false
+    private let disposeBag = DisposeBag()
+    private var tableView: UITableView!
+    private var isShowing: Bool = false
+    private var backgroundButton: UIButton!
+    // open
     var backClosure: ((Int) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundButton = UIButton()
+        addSubview(backgroundButton)
+        backgroundButton.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+        backgroundButton.rx.tap.bind { _ in
+            self.dismiss()
+        }.disposed(by: disposeBag)
         
         tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(UITableViewCell.self)
@@ -31,13 +42,14 @@ class DBPopupMovieTypeView: UIView, TableViewAnimationProtocol {
         tableView.snp.makeConstraints({
             $0.top.equalToSuperview().offset(10)
             $0.right.equalToSuperview().offset(-10)
-            $0.size.equalTo(CGSize(width: 140, height: 40 * 6))
+            $0.size.equalTo(CGSize(width: 140, height: 40 * 5))
         })
-        let items = Observable.just(["正在热映", "即将上映", "Top250", "口碑榜", "北美票房榜", "新片榜"])
+        let items = Observable.just(["正在热映", "即将上映", "Top250", "北美票房榜", "新片榜"])
         
         items.bind(to: tableView.rx.items) { tableView, row, element in
             let cell = tableView.dequeueReusableCell(with: UITableViewCell.self)
             cell.textLabel?.text = element
+            cell.selectionStyle = .none
             return cell
         }.disposed(by: disposeBag)
         
@@ -45,33 +57,21 @@ class DBPopupMovieTypeView: UIView, TableViewAnimationProtocol {
             self?.backClosure?(indexPath.row)
             self?.dismiss()
         }).disposed(by: disposeBag)
-        
-//        let tapGesture = UITapGestureRecognizer()
-//        addGestureRecognizer(tapGesture)
-//        tapGesture.rx.event.bind { _ in
-//            self.dismiss()
-//        }.disposed(by: disposeBag)
-    }
     
-    func popupIfNeed() {
-        if isShowing {
-            dismiss()
-        } else {
-            show()
-        }
     }
     
     func show() {
+        self.tableView.transform = .identity
         showAnimation(with: .layDown, tableView: tableView)
-        isShowing = true
     }
     
     func dismiss() {
-        showAnimation(with: .layDownBack, tableView: tableView)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+        UIView.animate(withDuration: 0.8, animations: {
+            self.tableView.frame.size.height = 0
+        }) { (_) in
             self.removeFromSuperview()
-            self.isShowing = false
         }
+//        showAnimation(with: .layDownBack, tableView: tableView)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -21,7 +21,9 @@ class DBHomeViewController: DBBaseViewController {
     private var currentCardIndex: Int = 0
     private var dataSource: [DBMovieSubject] = []
     private var tableView: UITableView!
-
+    private var isShowing: Bool = false
+    let popListView = DBPopupMovieTypeView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,6 +76,8 @@ class DBHomeViewController: DBBaseViewController {
                         headerView?.layoutIfNeeded()
                         headerView?.castModels = Observable.just(movie.casts)
                         self.tableView.tableHeaderView = headerView
+                        self.getMovieDetail(movie.id)
+                        print(movie)
                     }
                     cardView.addSubview(self.tableView)
                 }
@@ -94,23 +98,51 @@ class DBHomeViewController: DBBaseViewController {
         case 2:
             api = .top250
         case 3:
-            api = .weekly
-        case 4:
             api = .usBox
-        case 5:
+        case 4:
             api = .newMovies
         default:
             break
         }
         self.currentCardIndex = 0
         self.dataSource.removeAll()
-        DBNetworkProvider.rx.request(api).mapObject(DBTop250.self)
+        
+        if api.path == "/v2/movie/us_box" {
+            DBNetworkProvider.rx.request(api)
+                .mapObject(DBUSBox.self)
+                .subscribe(onSuccess: { data in
+                    // 数据处理
+
+                    print(data)
+                    self.dataSource = data.subjects.map({ $0.subject })
+                    self.swipeableView.discardViews()
+                    self.loadNextView()
+                }, onError: { error in
+                    print("数据请求失败! 错误原因: ", error)
+                }).disposed(by: disposeBag)
+
+        } else {
+            DBNetworkProvider.rx.request(api)
+                .mapObject(DBMovie.self)
+                .subscribe(onSuccess: { data in
+                    // 数据处理
+                    print(data)
+                    self.dataSource = data.subjects
+                    self.swipeableView.discardViews()
+                    self.loadNextView()
+                }, onError: { error in
+                    print("数据请求失败! 错误原因: ", error)
+                }).disposed(by: disposeBag)
+        }
+        
+    }
+    
+    func getMovieDetail(_ id: String) {
+        DBNetworkProvider.rx.request(.movieDetail(id))
+            .mapObject(DBMovieSubject.self)
             .subscribe(onSuccess: { data in
                 // 数据处理
                 print(data)
-                self.dataSource = data.subjects
-                self.swipeableView.discardViews()
-                self.loadNextView()
             }, onError: { error in
                 print("数据请求失败! 错误原因: ", error)
             }).disposed(by: disposeBag)
@@ -151,14 +183,18 @@ class DBHomeViewController: DBBaseViewController {
     }
     
     @objc func rightMoreButtonDidTap() {
-        let popListView = DBPopupMovieTypeView()
-        view.addSubview(popListView)
-        popListView.snp.makeConstraints({
-            $0.edges.equalToSuperview()
-        })
-        popListView.popupIfNeed()
-        popListView.backClosure = { row in
-            self.requestData(row)
+    
+        if view.subviews.contains(popListView) {
+            popListView.dismiss()
+        } else {
+            view.addSubview(popListView)
+            popListView.snp.makeConstraints({
+                $0.edges.equalToSuperview()
+            })
+            popListView.backClosure = { row in
+                self.requestData(row)
+            }
+            popListView.show()
         }
     }
 }
