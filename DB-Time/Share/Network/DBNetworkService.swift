@@ -15,8 +15,12 @@ let DBNetworkProvider = MoyaProvider<DBNetworkAPI>()
 /** 下面定义豆瓣FM请求的endpoints（供provider使用）**/
 //请求分类
 public enum DBNetworkAPI {
+    case inTheaters //
+    case comingSoon
     case top250  // top250
-    case movie   // 电影
+    case weekly  //
+    case usBox
+    case newMovies // 电影
 }
 
 //请求配置
@@ -29,10 +33,18 @@ extension DBNetworkAPI: TargetType {
     //各个请求的具体路径
     public var path: String {
         switch self {
+        case .inTheaters:
+            return "/v2/movie/in_theaters"
+        case .comingSoon:
+            return "/v2/movie/coming_soon"
         case .top250:
             return "/v2/movie/top250"
-        case .movie:
-            return "/v2/movie/in_theaters"
+        case .weekly:
+            return "/v2/movie/weekly"
+        case .usBox:
+            return "/v2/movie/us_box"
+        case .newMovies:
+            return "/v2/movie/new_movies"
         }
     }
     
@@ -44,7 +56,7 @@ extension DBNetworkAPI: TargetType {
     //请求任务事件（这里附带上参数）
     public var task: Task {
         switch self {
-        case .movie:
+        case .inTheaters:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
         default:
             return .requestPlain

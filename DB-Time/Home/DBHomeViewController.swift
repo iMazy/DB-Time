@@ -21,12 +21,11 @@ class DBHomeViewController: DBBaseViewController {
     private var currentCardIndex: Int = 0
     private var dataSource: [DBMovieSubject] = []
     private var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-
+        view.backgroundColor = COLOR_APPNORMAL
         navigationItem.title = "电影"
         
         let leftBarItemButton = UIButton(type: .system)
@@ -36,6 +35,8 @@ class DBHomeViewController: DBBaseViewController {
         leftBarItemButton.addTarget(self, action: #selector(leftBarButtonItemDidTap), for: .touchUpInside)
         leftBarItemButton.sizeToFit()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarItemButton)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(rightMoreButtonDidTap))
         
         swipeableView = ZLSwipeableView()
         view.addSubview(swipeableView)
@@ -54,17 +55,8 @@ class DBHomeViewController: DBBaseViewController {
         tableView.register(UITableViewCell.self)
         tableView.dataSource = self
         
-        DBNetworkProvider.rx.request(.top250).mapObject(DBTop250.self)
-            .subscribe(onSuccess: { data in
-                // 数据处理
-                print(data.subjects)
-                self.dataSource = data.subjects
-                self.loadNextView()
-            }, onError: { error in
-                print("数据请求失败! 错误原因: ", error)
-            }).disposed(by: disposeBag)
-        
 //        setupSwipeableViewDelegate()
+        requestData()
         
         swipeableView.didTap = {view, location in
             guard let containerView = view as? DBMovieCardContainer, let cardView = containerView.card else { return }
@@ -90,6 +82,38 @@ class DBHomeViewController: DBBaseViewController {
                 })
             })
         }
+    }
+    
+    func requestData(_ index: Int = 0) {
+        var api: DBNetworkAPI = .inTheaters
+        switch index {
+        case 0:
+            api = .inTheaters
+        case 1:
+            api = .comingSoon
+        case 2:
+            api = .top250
+        case 3:
+            api = .weekly
+        case 4:
+            api = .usBox
+        case 5:
+            api = .newMovies
+        default:
+            break
+        }
+        self.currentCardIndex = 0
+        self.dataSource.removeAll()
+        DBNetworkProvider.rx.request(api).mapObject(DBTop250.self)
+            .subscribe(onSuccess: { data in
+                // 数据处理
+                print(data)
+                self.dataSource = data.subjects
+                self.swipeableView.discardViews()
+                self.loadNextView()
+            }, onError: { error in
+                print("数据请求失败! 错误原因: ", error)
+            }).disposed(by: disposeBag)
     }
     
     func loadNextView() {
@@ -123,6 +147,18 @@ class DBHomeViewController: DBBaseViewController {
             self.menuContainerViewController.setSideMenuState(state: .closed)
         } else {
             self.menuContainerViewController.setSideMenuState(state: .leftMenuOpen)
+        }
+    }
+    
+    @objc func rightMoreButtonDidTap() {
+        let popListView = DBPopupMovieTypeView()
+        view.addSubview(popListView)
+        popListView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+        popListView.popupIfNeed()
+        popListView.backClosure = { row in
+            self.requestData(row)
         }
     }
 }

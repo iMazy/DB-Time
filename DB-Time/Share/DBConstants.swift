@@ -36,7 +36,7 @@ let IMAGE_VIEW_BG_COLOR  = UIColor(hexString: "E6E6E6")!
 let TABLE_VIEW_HEADER_FOOTER_TEXT_COLOR = UIColor(hexString: "B4B4B4")!
 
 // 默认背景色
-let COLOR_APPNORMAL: UIColor = UIColor(red: 54/255.0, green: 142/255.0, blue: 198/255.0, alpha: 1)
+let COLOR_APPNORMAL: UIColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1)
 let COLOR_BORDER: UIColor    = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1)
 
 // 间距
